@@ -1,5 +1,4 @@
-# PracticaPaint
-Pract1
+#Practicas
 
 ACT 1 Paint
 En la actividad de paint fuimos capaces de agregar un color extra para seleccionar al momento de hacer figuras

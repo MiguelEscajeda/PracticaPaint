@@ -1,13 +1,24 @@
 #Miguel Anhel Escajeda Anaya
 #A00829399
+# Miguel reflexion: En este dia aprendi sobre el juego pacman y su funcionamiento con turtle y freegames aprendi mas a
+# profundidad el mecanismo de las funciones de estos como el vector, el move, la escritura de texto en diversos colores y
+# alineaciones tambien aprendi a validar los movimientos de los fantasmas del juego para de esta manera poder optimizar
+# su movimiento mientras se juega, en esta sesion tambien hubo retos mas haya del de optimizar la inteligencia y el movimiento
+# de los fantasmas tambien en la implementacion del texto ya que el tablero se debe de estar constantemente actualizando, por
+# lo que fue necesario encontrar formas de que este permaneciera, tambien nos enfrentamos al reto de que el movimiento de los
+# fantasmas se movieran mas rapido por lo que esta actividad nos permitio usar nuestro ingenio y encontrar una solucion 
+# mas creativa la cual fue acelerar todo por medio del timer pero el pacman mas lento mediante un ciclo que solo actualizara cada numero
+# par, por ultimo esta actividad tambien fomento el trabajo colaborativo ya que en conjunto a mi compañero nos enfrentamos a estos
+#retos y logramos solucionarlos debido al buen trabajo en equipo.
+
 # Ernesto Flores 
 # A00828975
-# Reflexion
 # La programación es un campo que tiene muchas aplicaciones como lo es el crear juegos, en esta tarea vemos que con códigos 
 # relativamente simples podemos desarrollar juegos muy comunes. Además, es importante mencionar que lo más necesario es conocer 
 # lo que estamos haciendo y entender a la perfección cada instrucción, ya que de esta manera podemos implementar cambios así como 
 # resolver posibles errores. De igual manera con esta actividad vemos que hay muchas formas de llegar a una misma solución y que 
 # también hay muchas formas en que se puede diseñar un proyecto, disintas formas, colores y mensajes, todo depende de la imganación del progrmador.
+
 # 06-Mayo-2021
 
 # Imports de todas las librerias al inicio
@@ -21,6 +32,8 @@ state = {'score': 0}
 # Hace invisible la turtle-- creando dos objetos de clase turtle
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
+info = Turtle(visible=False)
+tab = Turtle(visible=False)
 
 # Direccion del Pacman
 aim = vector(5, 0)
@@ -43,19 +56,19 @@ ghosts = [
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
-    0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0,
-    0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0,
     0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0,
     0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
-    0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0,
-    0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
     0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0,
-    0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+    0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
     0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
-    0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0,
-    0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0,
+    0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0,
     0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -106,7 +119,7 @@ def valid(point):
 def world():
     "Draw world using path."
     bgcolor('black')
-    path.color('blue')
+    path.color('purple1')
     
     # Recorre toda la lista (tiles)
     for index in range(len(tiles)):
@@ -123,15 +136,30 @@ def world():
             if tile == 1:
                 path.up()
                 path.goto(x + 10, y + 10)
-                path.dot(2, 'white')
+                path.dot(4, 'white')
 
 def move():
+    #muestra nuestro nombres
+    def info_alumno1():
+        info.up()
+        info.goto(0,190)
+        info.color('blue')
+        info.write('ErnestoFloresA00828975', align='left', font=('Arial',12,'normal'))
+        info.up()
+        info.goto(-200,190)
+        info.color('white')
+        info.write('MiguelEscajedaA008293', align='left', font=('Arial',12,'normal'))
+    info_alumno1()
     # Lista de colores paraz los fantasmas
     colores = ['red', 'green', 'pink', 'white']
     "Move pacman and all ghosts."
-    writer.undo()
+    
+    # muestra el score
+    tab.undo()
+    tab.goto(150,150)
+    tab.color('white')
     valor = state['score']
-    writer.write(f'Score:{valor}')
+    tab.write(f'Score:{valor}')
 
     # Limpia la ventana
     clear()
@@ -178,7 +206,10 @@ def move():
             plan = choice(options)
             course.x = plan.x
             course.y = plan.y
-            
+            while not valid(point + course):
+                plan = choice(options)
+                course.x = plan.x
+                course.y = plan.y
             
         
         # levanta el lapiz
@@ -200,7 +231,7 @@ def move():
             writer.write('GAME OVER', font=('Arial',30,'normal'))
             return
     # vuelve a llmar  a la funcion dentro e 100 milisegundos
-    ontimer(move, 100)
+    ontimer(move, 20)
 
 def change(x, y):
     "Change pacman aim if valid."
@@ -218,12 +249,6 @@ hideturtle()
 
 # Oculta toda forma de dibujar
 tracer(False)
-
-# mueve la turtle a la poscion 160,160
-writer.goto(160, 160)
-writer.color('white')
-valor = state['score']
-writer.write(f'Score:{valor}')
 
 # Activar, escuchar los eventos del teclado
 listen()

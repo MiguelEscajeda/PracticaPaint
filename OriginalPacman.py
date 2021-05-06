@@ -1,8 +1,17 @@
 #Miguel Anhel Escajeda Anaya
 #A00829399
+# Miguel reflexion: En este dia aprendi sobre el juego pacman y su funcionamiento con turtle y freegames aprendi mas a
+# profundidad el mecanismo de las funciones de estos como el vector, el move, la escritura de texto en diversos colores y
+# alineaciones tambien aprendi a validar los movimientos de los fantasmas del juego para de esta manera poder optimizar
+# su movimiento mientras se juega, en esta sesion tambien hubo retos mas haya del de optimizar la inteligencia y el movimiento
+# de los fantasmas tambien en la implementacion del texto ya que el tablero se debe de estar constantemente actualizando, por
+# lo que fue necesario encontrar formas de que este permaneciera, tambien nos enfrentamos al reto de que el movimiento de los
+# fantasmas se movieran mas rapido por lo que esta actividad nos permitio usar nuestro ingenio y encontrar una solucion 
+# mas creativa la cual fue acelerar todo por medio del timer pero el pacman mas lento mediante un ciclo que solo actualizara cada numero
+# par, por ultimo esta actividad tambien fomento el trabajo colaborativo ya que en conjunto a mi compañero nos enfrentamos a estos
+#retos y logramos solucionarlos debido al buen trabajo en equipo.
 # Ernesto Flores 
 # A00828975
-# Reflexion
 # 06-Mayo-2021
 
 # Imports de todas las librerias al inicio
@@ -190,7 +199,10 @@ def move():
             plan = choice(options)
             course.x = plan.x
             course.y = plan.y
-            
+            while not valid(point + course):
+                plan = choice(options)
+                course.x = plan.x
+                course.y = plan.y
             
         
         # levanta el lapiz

@@ -10,5 +10,11 @@ ademas agregamos 3 figuras nuevas.
 
 ACT2 SNAKE
 En esta actividad fuimos capaces de modificar el juego Snake para poder agregar otras variantes como:
--Que snake y la comida tuvieran un color diferente elegido aleatoriamente cada vez que se capturaba una comida- Ernesto
--Que mientras la comida no fuera atrapada por Snake esta se moveria aleatoriamente hacia cualquier direccion una unidad- Miguel
+*Que snake y la comida tuvieran un color diferente elegido aleatoriamente cada vez que se capturaba una comida- Ernesto
+*Que mientras la comida no fuera atrapada por Snake esta se moveria aleatoriamente hacia cualquier direccion una unidad- Miguel
+
+ACT3 Pacman
+En esta actividad fuimos capaces de optimizar y personalizar este videojuego agregando:
+*Una mejora en la inteligencia delos fantasmas que permitio un movimiento mas fluido de estos- Miguel
+*Una mayo personalizacion del tabero distinto del original con marcador y señal de game over- Ernesto
+*Una mayor velocidd en el movimiento de los fantasmas- Ernesto

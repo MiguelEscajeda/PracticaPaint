@@ -10,8 +10,15 @@
 # mas creativa la cual fue acelerar todo por medio del timer pero el pacman mas lento mediante un ciclo que solo actualizara cada numero
 # par, por ultimo esta actividad tambien fomento el trabajo colaborativo ya que en conjunto a mi compañero nos enfrentamos a estos
 #retos y logramos solucionarlos debido al buen trabajo en equipo.
+
 # Ernesto Flores 
 # A00828975
+# La programación es un campo que tiene muchas aplicaciones como lo es el crear juegos, en esta tarea vemos que con códigos 
+# relativamente simples podemos desarrollar juegos muy comunes. Además, es importante mencionar que lo más necesario es conocer 
+# lo que estamos haciendo y entender a la perfección cada instrucción, ya que de esta manera podemos implementar cambios así como 
+# resolver posibles errores. De igual manera con esta actividad vemos que hay muchas formas de llegar a una misma solución y que 
+# también hay muchas formas en que se puede diseñar un proyecto, disintas formas, colores y mensajes, todo depende de la imganación del progrmador.
+
 # 06-Mayo-2021
 
 # Imports de todas las librerias al inicio

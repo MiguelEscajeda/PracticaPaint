@@ -18,3 +18,10 @@ En esta actividad fuimos capaces de optimizar y personalizar este videojuego agr
 *Una mejora en la inteligencia delos fantasmas que permitio un movimiento mas fluido de estos- Miguel
 *Una mayo personalizacion del tabero distinto del original con marcador y señal de game over- Ernesto
 *Una mayor velocidd en el movimiento de los fantasmas- Ernesto
+
+Act4 Memorama
+En este caso la ctividad consto de realizar un memoraracon tematica:
+*Agregar tematica de frutas y verduras
+*Indicar cuantos clicks necesarios para ganar y mencionar que ganaste
+*Editar la imagen del fondo del memorama
+*-Miguel
